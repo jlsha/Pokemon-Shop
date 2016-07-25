@@ -1,0 +1,57 @@
+#shop{
+    font-family: "Courier";
+    text-align: center;
+    color: #ff0e3f;
+    margin: 2% 5% 2% 5%;
+
+}
+
+
+
+#topBanner{
+    font-family: "Copperplate Gothic Bold";
+    text-align: right;
+    color: #336fd7;
+    font-size: xx-large;
+    font-weight: 900;
+    margin-bottom: 2%;
+    background-color: white;
+
+
+}
+
+#topBanner h5{
+    font-family: "Lucida Handwriting";
+    color: rgba(51, 111, 215, 0.53);
+    font-size: medium;
+
+
+}
+
+#topBanner img{
+    max-height: 275px;
+}
+
+#pokemonList{
+    border: 10px solid rgba(255, 248, 135, 0.57);
+    padding: 5% 5% 5% 5%;
+    margin-bottom: 5%;
+    background-color: rgba(51, 163, 255, 0.1);
+
+
+
+}
+
+#pokemonList img{
+
+    border: 10px solid white;
+    border-radius: 300px;
+    -moz-border-radius: 300px;
+    -webkit-border-radius: 300px;
+}
+
+#productDetails{
+    text-align: left;
+
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokemonShop">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Shop</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.min.css"/>
+    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="ShopController as shop" id="shop" class="container-fluid">
+    <div id="topBanner" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <div></br><h1>The Pokemon Shop</h1></div>
+                <div><h5>Take home a friend today!</h5></div>
+            </div>
+            <div class="col-xs-4">
+                <img src="img/nursejoy.gif"/>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div ng-repeat="product in shop.products | orderBy:'name'" id="pokemonList" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4">
+                <p>{{product.name | uppercase}}</p>
+                <p>{{product.price | currency}}</p>
+                <img ng-src = "img/pokemon/{{product.name}}.png" class="img-responsive"/>
+            </div>
+            <div class="col-xs-8" id="productDetails">
+                <ul class="nav nav-pills">
+                    <li><a href ng-click="tab = 1">Description</a></li>
+                    <li><a href ng-click="tab = 2">Reviews</a></li>
+                </ul>
+                {{tab}}
+                <div class="panel">
+                    <h4>Description</h4>
+                    <p>Height: {{product.height}}</p>
+                    <p>Weight: {{product.weight}}</p>
+                    <p>Category: {{product.category}}</p>
+                    <p>Type: {{product.type.join(", ")}}</p>
+                    <p>Weakness: {{product.weakness.join(", ")}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
