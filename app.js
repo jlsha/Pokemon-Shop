@@ -19,7 +19,13 @@
         };
     });
 
-    
+    app.controller('ReviewController', function(){
+        this.review = {};
+        this.addReview = function(product){
+            product.reviews.push(this.review);
+            this.review = {};
+        };
+    });
 
     var pokemons = [
         {
@@ -38,7 +44,21 @@
                 "ice",
                 "psychic"
             ],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+                    
+                },
+                {
+                    "stars": 4,
+                    "body": "Smaller than I expected!",
+                    "author": "Stephanie"
+
+                },
+            ]
         },
         {
             "name": "charmander",
@@ -52,7 +72,16 @@
                 "rock",
                 "water"
             ],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
+            
         },
         {
             "name": "squirtle",
@@ -65,7 +94,15 @@
                 "electric",
                 "grass"
             ],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
         },
         {
             "name": "pidgey",
@@ -82,7 +119,15 @@
                 "ice",
                 "rock"
             ],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
         },
         {
             "name": "ekans",
@@ -95,7 +140,15 @@
                 "ground",
                 "psychic"
             ],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
         },
         {
             "name": "pikachu",
@@ -105,7 +158,15 @@
             "category": "mouse",
             "type": ["electric"],
             "weakness": ["ground"],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
         },
         {
             "name": "sandshrew",
@@ -119,7 +180,15 @@
                 "ice",
                 "water"
             ],
-            "canPurchase": true
+            "canPurchase": true,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
         },
         {
             "name": "clefairy",
@@ -132,7 +201,15 @@
                 "steel",
                 "poison"
             ],
-            "canPurchase": false
+            "canPurchase": false,
+            "reviews":[
+                {
+                    "stars": 5,
+                    "body": "A cute addition!",
+                    "author": "Corey"
+
+                }
+            ]
 
         }
     ]
