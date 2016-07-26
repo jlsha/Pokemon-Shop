@@ -55,3 +55,19 @@
 
 
 }
+
+#productDetails .panel{
+    margin: 5% auto 5% auto;
+    padding: 5% 10% 5% 10%;
+    background-color: #eef2f5;
+    border: 10px solid white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#productDetails .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+    background-color: white;
+    color: red;
+
+}

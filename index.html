@@ -29,20 +29,30 @@
                 <p>{{product.name | uppercase}}</p>
                 <p>{{product.price | currency}}</p>
                 <img ng-src = "img/pokemon/{{product.name}}.png" class="img-responsive"/>
+                </br>
+                <button ng-show="product.canPurchase">Add to Cart</button>
+                <p ng-show="!product.canPurchase">SOLD OUT</p>
             </div>
-            <div class="col-xs-8" id="productDetails">
-                <ul class="nav nav-pills">
-                    <li><a href ng-click="tab = 1">Description</a></li>
-                    <li><a href ng-click="tab = 2">Reviews</a></li>
+            <div class="col-xs-8" id="productDetails"  ng-controller="PanelController as panel">
+                <ul class="nav nav-pills red">
+                    <li ng-class="{ active: panel.isSelected(1)}">
+                        <a href ng-click="panel.selectTab(1)">Description</a>
+                    </li>
+                    <li ng-class="{ active: panel.isSelected(2)}">
+                        <a href ng-click="panel.selectTab(2)">Reviews</a>
+                    </li>
                 </ul>
-                {{tab}}
-                <div class="panel">
-                    <h4>Description</h4>
+                <div class="panel" ng-show="panel.isSelected(1)">
+                    <h4>{{product.name | uppercase}}</h4>
                     <p>Height: {{product.height}}</p>
                     <p>Weight: {{product.weight}}</p>
                     <p>Category: {{product.category}}</p>
                     <p>Type: {{product.type.join(", ")}}</p>
                     <p>Weakness: {{product.weakness.join(", ")}}</p>
+                </div>
+                <div class="panel" ng-show="panel.isSelected(2)">
+                    <h4>Customer Reviews</h4>
+                    <blockquote>None yet</blockquote>
                 </div>
             </div>
         </div>

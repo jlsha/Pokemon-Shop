@@ -7,10 +7,17 @@
 
     app.controller('ShopController', function () {
         this.products = pokemons;
-
     });
 
-
+    app.controller('PanelController', function(){
+        this.tab = 1;
+        this.selectTab = function(setTab){
+            this.tab = setTab;
+        };
+        this.isSelected = function(checkTab){
+            return this.tab === checkTab;
+        };
+    });
 
     
 
@@ -30,7 +37,8 @@
                 "flying",
                 "ice",
                 "psychic"
-            ]
+            ],
+            "canPurchase": true
         },
         {
             "name": "charmander",
@@ -43,7 +51,8 @@
                 "ground",
                 "rock",
                 "water"
-            ]
+            ],
+            "canPurchase": true
         },
         {
             "name": "squirtle",
@@ -55,7 +64,8 @@
             "weakness":[
                 "electric",
                 "grass"
-            ]
+            ],
+            "canPurchase": true
         },
         {
             "name": "pidgey",
@@ -71,7 +81,8 @@
                 "electric",
                 "ice",
                 "rock"
-            ]
+            ],
+            "canPurchase": true
         },
         {
             "name": "ekans",
@@ -83,7 +94,8 @@
             "weakness":[
                 "ground",
                 "psychic"
-            ]
+            ],
+            "canPurchase": true
         },
         {
             "name": "pikachu",
@@ -92,7 +104,8 @@
             "weight": "13.2 lbs",
             "category": "mouse",
             "type": ["electric"],
-            "weakness": ["ground"]
+            "weakness": ["ground"],
+            "canPurchase": true
         },
         {
             "name": "sandshrew",
@@ -105,7 +118,8 @@
                 "grass",
                 "ice",
                 "water"
-            ]
+            ],
+            "canPurchase": true
         },
         {
             "name": "clefairy",
@@ -117,7 +131,9 @@
             "weakness":[
                 "steel",
                 "poison"
-            ]
+            ],
+            "canPurchase": false
+
         }
     ]
 
