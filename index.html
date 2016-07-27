@@ -56,7 +56,7 @@
                         <b>Stars: {{review.stars}}</b>
 
                         <p>{{review.body}}</p>
-                        <cite>-{{review.author}}</cite>
+                        <cite>-{{review.author}} on {{review.createdOn | date}}</cite>
                     </blockquote>
                     <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                         <blockquote ng-show="reviewCtrl.review.stars">
@@ -65,18 +65,20 @@
                             <p>{{reviewCtrl.review.body}}</p>
                             <cite ng-show="reviewCtrl.review.author">-{{reviewCtrl.review.author}}</cite>
                         </blockquote>
-                    <select ng-model="reviewCtrl.review.stars" required>
-                        <option value="">Please select</option>
-                        <option value="1">1 star</option>
-                        <option value="2">2 stars</option>
-                        <option value="3">3 stars</option>
-                        <option value="4">4 stars</option>
-                        <option value="5">5 stars</option>
-                    </select>
-                    <input type="text" placeholder="Your name." ng-model="reviewCtrl.review.author" required/>
-                    <textarea placeholder="Enter your thoughts here." ng-model="reviewCtrl.review.body" required></textarea>
-                    <input type="submit"/>
-                    </form>
+                        <select ng-model="reviewCtrl.review.stars" required>
+                            <option value="">Please select</option>
+                            <option value="1">1 star</option>
+                            <option value="2">2 stars</option>
+                            <option value="3">3 stars</option>
+                            <option value="4">4 stars</option>
+                            <option value="5">5 stars</option>
+                        </select>
+                        <p></p>
+                        <input style="width: 100%" type="text" placeholder="Your name." ng-model="reviewCtrl.review.author" required/>
+                        <textarea style="width: 100%" placeholder="Enter your thoughts here." ng-model="reviewCtrl.review.body" required></textarea>
+                        <p></p>
+                        <input type="submit"/>
+                        </form>
                 </div>
             </div>
         </div>

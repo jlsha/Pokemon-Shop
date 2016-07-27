@@ -55,7 +55,6 @@
 #productDetails{
     text-align: left;
 
-
 }
 
 #productDetails .panel{
@@ -84,3 +83,4 @@ input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty{
     border: 2px solid rgba(12, 255, 101, 0.48);
 
 }
+

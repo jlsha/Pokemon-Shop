@@ -21,9 +21,12 @@
 
     app.controller('ReviewController', function(){
         this.review = {};
+
         this.addReview = function(product){
+            this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             this.review = {};
+            this.review = $setPristine();
         };
     });
 
@@ -49,13 +52,15 @@
                 {
                     "stars": 5,
                     "body": "A cute addition!",
-                    "author": "Corey"
+                    "author": "Corey",
+                    "createdOn": 1439585689068
                     
                 },
                 {
                     "stars": 4,
                     "body": "Smaller than I expected!",
-                    "author": "Stephanie"
+                    "author": "Stephanie",
+                    "createdOn": 1465583669068
 
                 },
             ]
