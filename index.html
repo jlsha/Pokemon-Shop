@@ -87,7 +87,7 @@
                             <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userOpinion.$valid}"></span>
                         </div>
                         <p></p>
-                        <input type="submit"/>
+                        <input type="submit" ng-click="reviewForm.$valid && reviewForm.$setUntouched()"/>
                         </form>
                 </div>
             </div>
