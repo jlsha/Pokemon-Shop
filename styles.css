@@ -1,7 +1,7 @@
 #shop{
     font-family: "Courier";
     text-align: center;
-    color: #ff0e3f;
+    color: #8e23ff;
     margin: 2% 5% 2% 5%;
 
 }
@@ -42,6 +42,7 @@
 
 
 
+
 }
 
 #pokemonList img{
@@ -69,18 +70,26 @@
 
 #productDetails .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
     background-color: white;
-    color: red;
+    color: #8e23ff;
 
 }
 
 
-input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty{
-    border: 2px solid rgba(255, 37, 45, 0.48);
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid, select.ng-touched.ng-invalid{
+    border: 2px solid red;
 
 }
 
-input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty{
-    border: 2px solid rgba(12, 255, 101, 0.48);
+input.ng-valid, textarea.ng-valid, select.ng-valid{
+    border: 2px solid lime;
+}
 
+.glyphicon-ok{
+    color: darkgrey;
+}
+
+
+.glyphicon-ok.valid{
+    color: lime;
 }
 

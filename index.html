@@ -65,17 +65,27 @@
                             <p>{{reviewCtrl.review.body}}</p>
                             <cite ng-show="reviewCtrl.review.author">-{{reviewCtrl.review.author}}</cite>
                         </blockquote>
-                        <select ng-model="reviewCtrl.review.stars" required>
-                            <option value="">Please select</option>
-                            <option value="1">1 star</option>
-                            <option value="2">2 stars</option>
-                            <option value="3">3 stars</option>
-                            <option value="4">4 stars</option>
-                            <option value="5">5 stars</option>
-                        </select>
+                        <div id="formSelect">
+                            <select style="width: 80%" ng-model="reviewCtrl.review.stars" name="userStars" required>
+                                <option value="">Please select</option>
+                                <option value="1">1 star</option>
+                                <option value="2">2 stars</option>
+                                <option value="3">3 stars</option>
+                                <option value="4">4 stars</option>
+                                <option value="5">5 stars</option>
+                             </select>
+                             <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userStars.$valid}"></span>
+                        </div>
                         <p></p>
-                        <input style="width: 100%" type="text" placeholder="Your name." ng-model="reviewCtrl.review.author" required/>
-                        <textarea style="width: 100%" placeholder="Enter your thoughts here." ng-model="reviewCtrl.review.body" required></textarea>
+                        <div id="formUserName">
+                            <input style="width: 80%" type="text" placeholder="Your name." name="userName" ng-model="reviewCtrl.review.author" required/>
+                            <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userName.$valid}"></span>
+                        </div>
+                        <p></p>
+                        <div id="formTextArea">
+                            <textarea style="width: 80%" placeholder="Enter your thoughts here." name="userOpinion" ng-model="reviewCtrl.review.body" required></textarea>
+                            <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userOpinion.$valid}"></span>
+                        </div>
                         <p></p>
                         <input type="submit"/>
                         </form>
