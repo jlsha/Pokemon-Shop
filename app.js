@@ -2,40 +2,14 @@
  * Created by jennifersha on 7/22/16.
  */
 (function() {
-    var app = angular.module('pokemonShop', []);
+    var app = angular.module('pokemonShop', ['store-products']);
 
 
     app.controller('ShopController', function () {
         this.products = pokemons;
     });
-
-    app.controller('PanelController', function(){
-        this.tab = 1;
-        this.selectTab = function(setTab){
-            this.tab = setTab;
-        };
-        this.isSelected = function(checkTab){
-            return this.tab === checkTab;
-        };
-    });
-
-    app.controller('ReviewController', function(){
-        this.review = {};
-
-        this.addReview = function(product) {
-            this.review.createdOn = Date.now();
-            product.reviews.push(this.review);
-            this.review = {};
-        };
-    });
-
-    app.directive('productReview', function(){
-        return{
-            restrict: 'E',
-            templateUrl: 'product-review.html'
-        }
-    });
-
+    
+    
     app.directive('topBanner', function(){
         return{
             restrict:'E',
@@ -43,6 +17,7 @@
         }
     });
 
+    
     var pokemons = [
         {
             "name": "bulbasaur",

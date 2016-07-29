@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.min.css"/>
     <script type="text/javascript" src="lib/angular/angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="products.js"></script>
 </head>
 <body ng-controller="ShopController as shop" id="shop" class="container-fluid">
     <top-banner></top-banner>
@@ -21,34 +22,7 @@
                 <button ng-show="product.canPurchase">Add to Cart</button>
                 <p ng-show="!product.canPurchase">SOLD OUT</p>
             </div>
-            <div class="col-xs-8" id="productDetails"  ng-controller="PanelController as panel">
-                <ul class="nav nav-pills red">
-                    <li ng-class="{ active: panel.isSelected(1)}">
-                        <a href ng-click="panel.selectTab(1)">Description</a>
-                    </li>
-                    <li ng-class="{ active: panel.isSelected(2)}">
-                        <a href ng-click="panel.selectTab(2)">Reviews</a>
-                    </li>
-                </ul>
-                <div class="panel" ng-show="panel.isSelected(1)">
-                    <h4>{{product.name | uppercase}}</h4>
-                    <p>Height: {{product.height}}</p>
-                    <p>Weight: {{product.weight}}</p>
-                    <p>Category: {{product.category}}</p>
-                    <p>Type: {{product.type.join(", ")}}</p>
-                    <p>Weakness: {{product.weakness.join(", ")}}</p>
-                </div>
-                <div class="panel" ng-show="panel.isSelected(2)">
-                    <h4>Customer Reviews</h4>
-                    <blockquote ng-repeat="review in product.reviews">
-                        <b>Stars: {{review.stars}}</b>
-
-                        <p>{{review.body}}</p>
-                        <cite>-{{review.author}} on {{review.createdOn | date}}</cite>
-                    </blockquote>
-                    <product-review></product-review>
-                </div>
-            </div>
+            <product-tabs></product-tabs>
         </div>
     </div>
 

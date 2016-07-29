@@ -1,0 +1,16 @@
+<div class="col-xs-8" id="productDetails">
+    <ul class="nav nav-pills red">
+        <li ng-class="{ active: panel.isSelected(1)}">
+            <a href ng-click="panel.selectTab(1)">Description</a>
+        </li>
+        <li ng-class="{ active: panel.isSelected(2)}">
+            <a href ng-click="panel.selectTab(2)">Reviews</a>
+        </li>
+    </ul>
+    <div class="panel" ng-show="panel.isSelected(1)" product-description></div>
+    <div class="panel" ng-show="panel.isSelected(2)">
+        <h4>Customer Reviews</h4>
+        <blockquote ng-repeat="review in product.reviews" previous-reviews></blockquote>
+        <product-review></product-review>
+    </div>
+</div>
