@@ -27,10 +27,20 @@
             product.reviews.push(this.review);
             this.review = {};
         };
+    });
 
+    app.directive('productReview', function(){
+        return{
+            restrict: 'E',
+            templateUrl: 'product-review.html'
+        }
+    });
 
-        
-
+    app.directive('topBanner', function(){
+        return{
+            restrict:'E',
+            templateUrl: 'top-banner.html'
+        }
     });
 
     var pokemons = [

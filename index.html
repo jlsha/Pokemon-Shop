@@ -9,19 +9,7 @@
     <script src="app.js"></script>
 </head>
 <body ng-controller="ShopController as shop" id="shop" class="container-fluid">
-    <div id="topBanner" class="container-fluid">
-        <div class="row">
-            <div class="col-xs-6">
-                <div></br><h1>The Pokemon Shop</h1></div>
-                <div><h5>Take home a friend today!</h5></div>
-            </div>
-            <div class="col-xs-4">
-                <img src="img/nursejoy.gif"/>
-            </div>
-
-        </div>
-    </div>
-
+    <top-banner></top-banner>
 
     <div ng-repeat="product in shop.products | orderBy:'name'" id="pokemonList" class="container-fluid">
         <div class="row">
@@ -58,37 +46,7 @@
                         <p>{{review.body}}</p>
                         <cite>-{{review.author}} on {{review.createdOn | date}}</cite>
                     </blockquote>
-                    <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-                        <blockquote ng-show="reviewCtrl.review.stars">
-                            <b>Stars: {{reviewCtrl.review.stars}}</b>
-
-                            <p>{{reviewCtrl.review.body}}</p>
-                            <cite ng-show="reviewCtrl.review.author">-{{reviewCtrl.review.author}}</cite>
-                        </blockquote>
-                        <div id="formSelect">
-                            <select style="width: 80%" ng-model="reviewCtrl.review.stars" name="userStars" required>
-                                <option value="">Please select</option>
-                                <option value="1">1 star</option>
-                                <option value="2">2 stars</option>
-                                <option value="3">3 stars</option>
-                                <option value="4">4 stars</option>
-                                <option value="5">5 stars</option>
-                             </select>
-                             <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userStars.$valid}"></span>
-                        </div>
-                        <p></p>
-                        <div id="formUserName">
-                            <input style="width: 80%" type="text" placeholder="Your name." name="userName" ng-model="reviewCtrl.review.author" required/>
-                            <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userName.$valid}"></span>
-                        </div>
-                        <p></p>
-                        <div id="formTextArea">
-                            <textarea style="width: 80%" placeholder="Enter your thoughts here." name="userOpinion" ng-model="reviewCtrl.review.body" required></textarea>
-                            <span class="glyphicon glyphicon-ok" ng-class="{valid:reviewForm.userOpinion.$valid}"></span>
-                        </div>
-                        <p></p>
-                        <input type="submit" ng-click="reviewForm.$valid && reviewForm.$setUntouched()"/>
-                        </form>
+                    <product-review></product-review>
                 </div>
             </div>
         </div>
