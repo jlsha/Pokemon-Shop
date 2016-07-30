@@ -13,7 +13,7 @@
     app.directive('topBanner', function(){
         return{
             restrict:'E',
-            templateUrl: 'top-banner.html'
+            templateUrl: 'templates/top-banner.html'
         }
     });
 
@@ -42,7 +42,7 @@
                     "body": "A cute addition!",
                     "author": "Corey",
                     "createdOn": 1439585689068
-                    
+
                 },
                 {
                     "stars": 4,
@@ -74,7 +74,7 @@
 
                 }
             ]
-            
+
         },
         {
             "name": "squirtle",

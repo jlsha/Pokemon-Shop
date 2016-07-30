@@ -8,7 +8,7 @@
     app.directive('productReview', function(){
         return{
             restrict: 'E',
-            templateUrl: 'product-review.html',
+            templateUrl: 'templates/product-review.html',
             controller: function() {
                 this.review = {};
 
@@ -26,7 +26,7 @@
     app.directive('productTabs', function(){
         return{
             restrict: 'E',
-            templateUrl: 'product-tabs.html',
+            templateUrl: 'templates/product-tabs.html',
             controller: function() {
                 this.tab = 1;
                 this.selectTab = function (setTab) {
@@ -44,7 +44,7 @@
     app.directive('productDescription', function(){
         return{
             restrict:'A',
-            templateUrl: 'product-description.html'
+            templateUrl: 'templates/product-description.html'
         }
     });
 
@@ -52,7 +52,7 @@
     app.directive('previousReviews', function(){
         return{
             restrict:'A',
-            templateUrl: 'previous-reviews.html'
+            templateUrl: 'templates/previous-reviews.html'
         }
     });
     
