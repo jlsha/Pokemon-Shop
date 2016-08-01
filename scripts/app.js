@@ -2,11 +2,12 @@
  * Created by jennifersha on 7/22/16.
  */
 (function() {
-    var app = angular.module('pokemonShop', ['store-products']);
+    var app = angular.module('pokemonShop', ['store-products','angular.filter']);
 
 
     app.controller('ShopController', function () {
         this.products = pokemons;
+
     });
     
     

@@ -8,11 +8,27 @@
     <script type="text/javascript" src="lib/angular/angular.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/products.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+
 </head>
 <body ng-controller="ShopController as shop" id="shop" class="container-fluid">
     <top-banner></top-banner>
 
-    <div ng-repeat="product in shop.products | orderBy:'name'" id="pokemonList" class="container-fluid">
+
+    Filter By Price:
+    <select ng-model="selectedPrice" ng-options="product.price|currency for product in shop.products | unique:'price' | orderBy:'+price' ">
+        <option value = "">Select Price</option>
+
+
+    </select>
+
+    Search:
+    <input type="text" ng-model="searchBox" id="searchBox"/>
+
+
+    <div ng-repeat="product in shop.products | orderBy:'name' | filter: searchBox | filter: {price: selectedPrice.price}:true " id="pokemonList" class="container-fluid">
+
+
         <div class="row">
             <div class="col-xs-4">
                 <p>{{product.name | uppercase}}</p>

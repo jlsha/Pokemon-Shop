@@ -93,3 +93,13 @@ input.ng-valid, textarea.ng-valid, select.ng-valid{
     color: lime;
 }
 
+#searchBox{
+
+    border-color: white;
+    background-color: rgba(51, 111, 215, 0.15);
+    margin-bottom: 2%;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    padding-left: 2%;
+}
