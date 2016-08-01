@@ -3,6 +3,7 @@
     text-align: center;
     color: #8e23ff;
     margin: 2% 5% 2% 5%;
+    min-width: 450px;
 
 }
 
@@ -66,6 +67,8 @@
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+    overflow-wrap: break-word;
+
 }
 
 #productDetails .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
@@ -73,6 +76,7 @@
     color: #8e23ff;
 
 }
+
 
 
 input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid, select.ng-touched.ng-invalid{
@@ -97,9 +101,6 @@ input.ng-valid, textarea.ng-valid, select.ng-valid{
 
     border-color: white;
     background-color: rgba(51, 111, 215, 0.15);
-    margin-bottom: 2%;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    padding-left: 2%;
+
 }
+
