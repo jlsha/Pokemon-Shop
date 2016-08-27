@@ -12,4 +12,4 @@ Mobile-friendly responsive design.
 
 ## Demo link 
 
-https://jlsha.github.io/pokemonshop/
+https://jlsha.github.io/Pokemon-Shop/
